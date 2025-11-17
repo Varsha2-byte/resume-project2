@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Online Registration Form</h2>
+
+    <form id="regForm">
+        <label>Full Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Gender:</label>
+        <select id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone" required>
+
+        <label>Address:</label>
+        <input type="text" id="address">
+
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+</div>
+
+<div class="outputBox" id="output" style="display:none;">
+    <h2>Submitted Information</h2>
+    <p><b>Name:</b> <span id="out_name"></span></p>
+    <p><b>Gender:</b> <span id="out_gender"></span></p>
+    <p><b>Email:</b> <span id="out_email"></span></p>
+    <p><b>Phone:</b> <span id="out_phone"></span></p>
+    <p><b>Address:</b> <span id="out_address"></span></p>
+</div>
+
+<script>
+// jQuery button click
+$("#submitBtn").click(function () {
+
+    // read form values
+    $("#out_name").text($("#name").val());
+    $("#out_gender").text($("#gender").val());
+    $("#out_email").text($("#email").val());
+    $("#out_phone").text($("#phone").val());
+    $("#out_address").text($("#address").val());
+
+    // show the output box
+    $("#output").slideDown();
+});
+</script>
+
+</body>
+</html>
